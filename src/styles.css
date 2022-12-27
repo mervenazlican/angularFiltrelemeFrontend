@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+    background-color:rgb(233, 220, 200);
+}
+.tab{
+    color: rgb(194, 63, 63);
+}
+
+.baslik{
+    color: rgb(194, 63, 63);
+}
+.text-center{
+    color: rgb(194, 63, 63);
+}
+.ftext{
+    color: rgb(194, 63, 63);
+}
+
+@import "~bootstrap/dist/css/bootstrap.min.css"

@@ -1,0 +1,39 @@
+<h3 class = "tab">Projeler Listesi </h3>
+  <div class="mb-3">
+    <ng-template #additional>
+        <p>
+        <span class="label label-info"> - Lütfen <strong>küçük</strong> harf aratınız !</span>
+      </p>
+    </ng-template>
+    <input 
+        class="form-control" id="projeAra" 
+        placeholder="Liste içerisinde aramak istediğiniz herhangi bir kelimeyi giriniz.."
+        [(ngModel)] ="filterText"
+    />
+    <div *ngIf="filterText;  else additional">
+        - Şuan <strong class="ftext">{{filterText}}</strong> aradınız
+    </div>
+  </div>
+<table class = "table table-striped">
+    <thead>
+        <tr class="baslik">
+            <th> Proje Adı</th> 
+            <th> Proje Konusu</th>
+            <th> Proje Başlangıç Tarihi</th>
+            <th> Proje Bitiş Tarihi</th>
+            <th> Proje Yöneticisi</th>
+            <th> Proje Durumu</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let projeler of projeList | sorgulaFilter:filterText">
+            <td> {{projeler.projeAdi}}</td>
+            <td> {{projeler.projeKonusu}}</td>
+            <td> {{projeler.baslangicTarihi}}</td>
+            <td> {{projeler.bitisTarihi}}</td>
+            <td> {{projeler.projeYoneticisi}}</td>
+            <td> {{projeler.projeDurumu}}</td>
+                 
+        </tr>
+    </tbody>
+</table>
